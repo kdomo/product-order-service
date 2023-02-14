@@ -7,10 +7,10 @@ import lombok.Getter;
 @Getter
 public class Product {
 
-	private Long id;
 	private final String name;
 	private final int price;
 	private final DiscountPolicy discountPolicy;
+	private Long id;
 
 	public Product(final String name, final int price, final DiscountPolicy discountPolicy) {
 		Assert.hasText(name, "상품명은 필수입니다.");
@@ -21,7 +21,7 @@ public class Product {
 		this.discountPolicy = discountPolicy;
 	}
 
-	public void assginId(Long aLong) {
+	public void assignId(Long id) {
 		this.id = id;
 	}
 }

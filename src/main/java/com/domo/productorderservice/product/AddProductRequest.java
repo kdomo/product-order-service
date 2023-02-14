@@ -10,6 +10,12 @@ public class AddProductRequest {
 	private final int price;
 	private final DiscountPolicy discountPolicy;
 
+	public AddProductRequest() {
+		this.name = null;
+		this.price = 0;
+		this.discountPolicy = null;
+	}
+
 	public AddProductRequest(final String name, final int price, final DiscountPolicy discountPolicy) {
 		Assert.hasText(name, "상품명은 필수입니다.");
 		Assert.isTrue(price > 0, "상품 가격은 0보다 커야 합니다.");
