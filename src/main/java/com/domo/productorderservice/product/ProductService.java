@@ -1,5 +1,8 @@
 package com.domo.productorderservice.product;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ProductService {
 	private final ProductPort productPort;
 
