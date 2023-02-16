@@ -1,5 +1,6 @@
 package com.domo.productorderservice.product;
 
+import static com.domo.productorderservice.product.ProductSteps.*;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
@@ -8,10 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
 import com.domo.productorderservice.ApiTest;
-
-import io.restassured.RestAssured;
-import io.restassured.response.ExtractableResponse;
-import io.restassured.response.Response;
 
 public class ProductApiTest extends ApiTest {
 	@Autowired
@@ -32,11 +29,7 @@ public class ProductApiTest extends ApiTest {
 		productService.addProduct(ProductSteps.상품등록요청_생성());
 		Long productId = 1L;
 
-		final ExtractableResponse<Response> response = RestAssured.given().log().all()
-				.when()
-				.get("/products/{productId}", productId)
-				.then().log().all()
-				.extract();
+		final var response = 상품조회요청(productId);
 
 		assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
 		assertThat(response.jsonPath().getString("name")).isEqualTo("상품명");

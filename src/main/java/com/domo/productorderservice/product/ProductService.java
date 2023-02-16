@@ -38,4 +38,12 @@ public class ProductService {
 		return ResponseEntity.ok(response);
 
 	}
+
+	public void updateProduct(Long productId, UpdateProductRequest request) {
+		final Product product = productPort.getProduct(productId);
+
+		product.update(request.getName(), request.getPrice(), request.getDiscountPolicy());
+
+		productPort.save(product);
+	}
 }
