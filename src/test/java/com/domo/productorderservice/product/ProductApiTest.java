@@ -10,9 +10,12 @@ import org.springframework.http.HttpStatus;
 
 import com.domo.productorderservice.ApiTest;
 
+import io.restassured.response.ExtractableResponse;
+import io.restassured.response.Response;
+
 public class ProductApiTest extends ApiTest {
 	@Autowired
-	private ProductService productService;
+	private ProductRepository productRepository;
 
 	@Test
 	@DisplayName("상품 등록")
@@ -26,7 +29,7 @@ public class ProductApiTest extends ApiTest {
 	@Test
 	@DisplayName("상품 조회")
 	void 상품조회() {
-		productService.addProduct(ProductSteps.상품등록요청_생성());
+		ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
 		Long productId = 1L;
 
 		final var response = 상품조회요청(productId);
@@ -35,5 +38,17 @@ public class ProductApiTest extends ApiTest {
 		assertThat(response.jsonPath().getString("name")).isEqualTo("상품명");
 		assertThat(response.jsonPath().getInt("price")).isEqualTo(1000);
 		assertThat(response.jsonPath().getString("discountPolicy")).isEqualTo("NONE");
+	}
+
+	@Test
+	@DisplayName("상품 수정")
+	void 상품_수정() {
+		ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
+		final Long productId = 1L;
+
+		final ExtractableResponse<Response> response = 상품수정요청(productId);
+
+		assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+		assertThat(productRepository.findById(1L).get().getName()).isEqualTo("상품 수정");
 	}
 }
