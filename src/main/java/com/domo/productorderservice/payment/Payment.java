@@ -1,13 +1,30 @@
 package com.domo.productorderservice.payment;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 import org.springframework.util.Assert;
 
 import com.domo.productorderservice.order.Order;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 class Payment {
-	private final Order order;
-	private final String cardNumber;
+	@Id
+	@GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 	private Long id;
+
+	@OneToOne
+	private Order order;
+
+	private String cardNumber;
 
 	public Payment(Order order, String cardNumber) {
 		Assert.notNull(order, "주문 정보는 필수입니다.");
@@ -16,23 +33,8 @@ class Payment {
 		this.cardNumber = cardNumber;
 	}
 
-	public void assignId(final Long id) {
-		this.id = id;
-	}
-
-	public Order getOrder() {
-		return order;
-	}
-
-	public String getCardNumber() {
-		return cardNumber;
-	}
-
 	public int getPrice() {
 		return order.getTotalPrice();
 	}
 
-	public Long getId() {
-		return id;
-	}
 }
