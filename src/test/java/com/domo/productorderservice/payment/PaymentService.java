@@ -1,7 +1,10 @@
 package com.domo.productorderservice.payment;
 
+import org.springframework.stereotype.Component;
+
 import com.domo.productorderservice.order.Order;
 
+@Component
 class PaymentService {
 
 	private final PaymentPort paymentPort;
