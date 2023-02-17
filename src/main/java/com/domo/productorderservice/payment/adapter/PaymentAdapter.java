@@ -1,12 +1,14 @@
-package com.domo.productorderservice.payment;
+package com.domo.productorderservice.payment.adapter;
 
 import org.springframework.stereotype.Component;
 
-import com.domo.productorderservice.order.Order;
-import com.domo.productorderservice.order.OrderRepository;
+import com.domo.productorderservice.order.adapter.OrderRepository;
+import com.domo.productorderservice.order.domain.Order;
+import com.domo.productorderservice.payment.application.port.PaymentPort;
+import com.domo.productorderservice.payment.domain.Payment;
 
 @Component
-class PaymentAdapter implements PaymentPort {
+public class PaymentAdapter implements PaymentPort {
 	private final PaymentGateway paymentGateway;
 	private final PaymentRepository paymentRepository;
 	private final OrderRepository orderRepository;

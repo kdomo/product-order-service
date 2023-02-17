@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
 import com.domo.productorderservice.ApiTest;
+import com.domo.productorderservice.product.adapter.ProductRepository;
 
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;

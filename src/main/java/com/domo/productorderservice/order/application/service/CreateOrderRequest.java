@@ -1,11 +1,11 @@
-package com.domo.productorderservice.order;
+package com.domo.productorderservice.order.application.service;
 
 import org.springframework.util.Assert;
 
 import lombok.Getter;
 
 @Getter
-class CreateOrderRequest {
+public class CreateOrderRequest {
 	private final Long productId;
 	private final int quantity;
 

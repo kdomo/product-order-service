@@ -1,4 +1,4 @@
-package com.domo.productorderservice.order;
+package com.domo.productorderservice.order.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 import org.springframework.util.Assert;
 
-import com.domo.productorderservice.product.Product;
+import com.domo.productorderservice.product.domain.Product;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

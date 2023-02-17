@@ -1,4 +1,4 @@
-package com.domo.productorderservice.order;
+package com.domo.productorderservice.order.application.service;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.domo.productorderservice.product.Product;
+import com.domo.productorderservice.order.application.port.OrderPort;
+import com.domo.productorderservice.order.domain.Order;
+import com.domo.productorderservice.product.domain.Product;
 
 @RestController
 @RequestMapping("/orders")

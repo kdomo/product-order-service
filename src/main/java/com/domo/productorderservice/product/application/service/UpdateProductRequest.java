@@ -1,10 +1,13 @@
-package com.domo.productorderservice.product;
+package com.domo.productorderservice.product.application.service;
 
 import org.springframework.util.Assert;
+
+import com.domo.productorderservice.product.domain.DiscountPolicy;
 
 import lombok.Getter;
 
 @Getter
+public
 class UpdateProductRequest {
 	private final String name;
 	private final int price;

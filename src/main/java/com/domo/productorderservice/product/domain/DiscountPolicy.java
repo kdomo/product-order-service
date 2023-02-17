@@ -1,4 +1,4 @@
-package com.domo.productorderservice.product;
+package com.domo.productorderservice.product.domain;
 
 public enum DiscountPolicy {
 	NONE {
@@ -14,5 +14,5 @@ public enum DiscountPolicy {
 		}
 	};
 
-	abstract int applyDiscount(final int price);
+	public abstract int applyDiscount(final int price);
 }

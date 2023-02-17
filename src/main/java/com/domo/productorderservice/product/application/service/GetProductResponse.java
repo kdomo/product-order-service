@@ -1,6 +1,8 @@
-package com.domo.productorderservice.product;
+package com.domo.productorderservice.product.application.service;
 
 import org.springframework.util.Assert;
+
+import com.domo.productorderservice.product.domain.DiscountPolicy;
 
 import lombok.Getter;
 

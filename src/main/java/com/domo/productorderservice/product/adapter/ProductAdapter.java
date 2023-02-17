@@ -1,6 +1,9 @@
-package com.domo.productorderservice.product;
+package com.domo.productorderservice.product.adapter;
 
 import org.springframework.stereotype.Component;
+
+import com.domo.productorderservice.product.application.port.ProductPort;
+import com.domo.productorderservice.product.domain.Product;
 
 @Component
 public class ProductAdapter implements ProductPort {

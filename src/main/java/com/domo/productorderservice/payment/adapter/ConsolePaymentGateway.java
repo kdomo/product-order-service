@@ -1,4 +1,4 @@
-package com.domo.productorderservice.payment;
+package com.domo.productorderservice.payment.adapter;
 
 import org.springframework.stereotype.Component;
 

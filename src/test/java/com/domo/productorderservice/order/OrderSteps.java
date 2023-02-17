@@ -2,6 +2,8 @@ package com.domo.productorderservice.order;
 
 import static org.springframework.http.MediaType.*;
 
+import com.domo.productorderservice.order.application.service.CreateOrderRequest;
+
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;

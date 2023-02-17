@@ -1,4 +1,4 @@
-package com.domo.productorderservice.product;
+package com.domo.productorderservice.product.application.service;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.domo.productorderservice.product.application.port.ProductPort;
+import com.domo.productorderservice.product.domain.Product;
 
 @RestController
 @RequestMapping("/products")

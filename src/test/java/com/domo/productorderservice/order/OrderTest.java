@@ -4,8 +4,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.domo.productorderservice.product.DiscountPolicy;
-import com.domo.productorderservice.product.Product;
+import com.domo.productorderservice.order.domain.Order;
+import com.domo.productorderservice.product.domain.DiscountPolicy;
+import com.domo.productorderservice.product.domain.Product;
 
 class OrderTest {
 

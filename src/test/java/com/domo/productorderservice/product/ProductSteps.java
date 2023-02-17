@@ -4,6 +4,10 @@ import static org.springframework.http.MediaType.*;
 
 import org.springframework.http.MediaType;
 
+import com.domo.productorderservice.product.application.service.AddProductRequest;
+import com.domo.productorderservice.product.application.service.UpdateProductRequest;
+import com.domo.productorderservice.product.domain.DiscountPolicy;
+
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;

@@ -1,4 +1,4 @@
-package com.domo.productorderservice.payment;
+package com.domo.productorderservice.payment.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import javax.persistence.OneToOne;
 
 import org.springframework.util.Assert;
 
-import com.domo.productorderservice.order.Order;
+import com.domo.productorderservice.order.domain.Order;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-class Payment {
+public class Payment {
 	@Id
 	@GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 	private Long id;

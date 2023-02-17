@@ -1,12 +1,14 @@
-package com.domo.productorderservice.order;
+package com.domo.productorderservice.order.adapter;
 
 import org.springframework.stereotype.Component;
 
-import com.domo.productorderservice.product.Product;
-import com.domo.productorderservice.product.ProductRepository;
+import com.domo.productorderservice.order.application.port.OrderPort;
+import com.domo.productorderservice.order.domain.Order;
+import com.domo.productorderservice.product.adapter.ProductRepository;
+import com.domo.productorderservice.product.domain.Product;
 
 @Component
-class OrderAdapter implements OrderPort {
+public class OrderAdapter implements OrderPort {
 	private final ProductRepository productRepository;
 	private final OrderRepository orderRepository;
 

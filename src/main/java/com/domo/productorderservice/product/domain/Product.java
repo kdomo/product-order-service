@@ -1,4 +1,4 @@
-package com.domo.productorderservice.product;
+package com.domo.productorderservice.product.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
