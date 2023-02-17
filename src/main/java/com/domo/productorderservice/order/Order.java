@@ -1,13 +1,30 @@
 package com.domo.productorderservice.order;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 import org.springframework.util.Assert;
 
 import com.domo.productorderservice.product.Product;
 
-class Order {
-	private final Product product;
-	private final int quantity;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "orders")
+@NoArgsConstructor(access = lombok.AccessLevel.PROTECTED)
+@Getter
+public class Order {
+	@Id
+	@GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 	private Long id;
+
+	@OneToOne
+	private Product product;
+	private int quantity;
 
 	public Order(Product product, int quantity) {
 		Assert.notNull(product, "상품은 필수입니다.");
@@ -16,11 +33,7 @@ class Order {
 		this.quantity = quantity;
 	}
 
-	public void assignId(final Long id) {
-		this.id = id;
-	}
-
-	public Long getId() {
-		return id;
+	public int getTotalPrice() {
+		return product.getDiscountPrice() * quantity;
 	}
 }
